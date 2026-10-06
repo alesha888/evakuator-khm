@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Евакуатор Хмельницький 24/7 | По всій Україні</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070709;
+      --card-bg: #110d18;
+      --border: #2e1847;
+      --purple-accent: #c084fc;
+      --purple-primary: #a855f7;
+      --purple-glow: rgba(168, 85, 247, 0.45);
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 20px 100px;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: var(--purple-accent);
+      text-shadow: 0 0 16px var(--purple-glow);
+    }
+
+    .badge-247 {
+      background: linear-gradient(135deg, #9333ea, #581c87);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--purple-accent);
+      box-shadow: 0 0 14px var(--purple-glow);
+    }
+
+    .hero {
+      padding: 50px 0 34px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--purple-accent);
+      margin-bottom: 16px;
+      background: rgba(192, 132, 252, 0.1);
+      padding: 6px 16px;
+      border-radius: 30px;
+      border: 1px solid rgba(192, 132, 252, 0.3);
+    }
+
+    .hero h1 {
+      font-size: 2.35rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--purple-accent);
+      text-shadow: 0 0 20px var(--purple-glow);
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 760px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
+    }
+
+    .btn-main {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--purple-primary), #6b21a8);
+      color: #ffffff !important;
+      font-size: 1.2rem;
+      font-weight: 800;
+      padding: 18px 32px;
+      border-radius: 14px;
+      text-decoration: none;
+      box-shadow: 0 0 25px var(--purple-glow);
+      border: 1px solid var(--purple-accent);
+      width: 100%;
+      max-width: 440px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-main:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+      box-shadow: 0 0 35px var(--purple-glow);
+    }
+
+    .messengers {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 18px;
+    }
+
+    .btn-msg {
+      flex: 1;
+      max-width: 180px;
+      padding: 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+      transition: 0.2s ease;
+    }
+
+    .btn-msg:hover {
+      transform: translateY(-2px);
+    }
+
+    .viber { background: #7360f2; }
+    .telegram { background: #229ed9; }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin: 52px 0 20px;
+      text-align: center;
+      color: var(--purple-accent);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin: -12px auto 26px;
+      max-width: 620px;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .spec-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .spec-val {
+      color: var(--purple-accent);
+      font-size: 1.45rem;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .spec-lbl {
+      color: #94a3b8;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-bottom: 34px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      border-color: var(--purple-primary);
+      transform: translateY(-2px);
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .services-list {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 26px;
+      margin-bottom: 34px;
+    }
+
+    .service-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(192, 132, 252, 0.12);
+      font-size: 0.98rem;
+      color: var(--text-muted);
+    }
+
+    .service-row:last-child {
+      border-bottom: none;
+    }
+
+    .dot {
+      color: var(--purple-accent);
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    .service-row strong {
+      color: #ffffff;
+    }
+
+    .geo-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 34px;
+    }
+
+    .geo-tag {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .geo-tag span {
+      color: var(--purple-accent);
+      margin-right: 4px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .step-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .step-num {
+      color: var(--purple-accent);
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .step-head {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .step-text {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .faq-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px 24px;
+      margin-bottom: 34px;
+    }
+
+    .faq-item {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(192, 132, 252, 0.12);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .faq-q span {
+      color: var(--purple-accent);
+      margin-right: 6px;
+    }
+
+    .faq-a {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 14px 18px;
+      background: rgba(7, 7, 9, 0.95);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    @media (max-width: 650px) {
+      .hero h1 { font-size: 1.85rem; }
+      .section-title { font-size: 1.35rem; }
+      .btn-main { font-size: 1.05rem; padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo">Евакуатор <span>Хмельницький</span></div>
+      <div class="badge-247">24/7 Без вихідних</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-badge">Швидка техдопомога на дорозі</div>
+      <h1>Швидкий евакуатор у Хмельницькому та рейси <span>по всій Україні</span></h1>
+      <p>Цілодобовий виїзд спецтехніки від 15 хвилин по місту. Професійне перевезення авто будь-якої складності після ДТП, несправностей та блокувань без прихованих витрат.</p>
+      
+      <a href="tel:+380989017932" class="btn-main">📞 Викликати: +38 (098) 901-79-32</a>
+      
+      <div class="messengers">
+        <a href="viber://chat?number=%2B380989017932" class="btn-msg viber">💬 Viber</a>
+        <a href="https://t.me/+380989017932" class="btn-msg telegram">✈️ Telegram</a>
+      </div>
+    </section>
+
+    <div class="section-title">Характеристики спецтехніки</div>
+    <div class="section-subtitle">Сучасний надійний евакуатор для безпечного транспортування будь-яких авто.</div>
+    <div class="specs-grid">
+      <div class="spec-item">
+        <div class="spec-val">до 3.5 т</div>
+        <div class="spec-lbl">Вантажопідйомність</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">15–25 хв</div>
+        <div class="spec-lbl">Подача по місту</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">5.5 тонн</div>
+        <div class="spec-lbl">Потужна лебідка</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">24/7</div>
+        <div class="spec-lbl">Цілодобово</div>
+      </div>
+    </div>
+
+    <div class="section-title">Наші переваги</div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-title">⚡ Блискавичний виїзд</div>
+        <div class="card-desc">Евакуатор чергує на магістралях міста. Середній час прибуття по Хмельницькому — 15–25 хвилин після дзвінка.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">🇺🇦 Рейси по всій Україні</div>
+        <div class="card-desc">Доставимо авто з будь-якого населеного пункту України до Хмельницького або у зворотньому напрямку без затримок.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">🕒 Цілодобово 24/7</div>
+        <div class="card-desc">Працюємо щодня, вдень та вночі, у вихідні, свята та за будь-якої складної погоди (сніг, ожеледиця).</div>
+      </div>
+      <div class="card">
+        <div class="card-title">🤝 Фіксована вартість</div>
+        <div class="card-desc">Ціна озвучується оператором до виїзду машини та не змінюється після прибуття чи по завершенню поїздки.</div>
+      </div>
+    </div>
+
+    <div class="section-title">Послуги перевезення</div>
+    <div class="services-list">
+      <div class="service-row">
+        <span class="dot">✦</span>
+        <div><strong>Транспортування всіх типів транспорту:</strong> седани, універсали, кросовери, повнорозмірні джипи, буси та спецтехніка.</div>
+      </div>
+      <div class="service-row">
+        <span class="dot">✦</span>
+        <div><strong>Складна евакуація після аварій:</strong> акуратне витягування потужною лебідкою з кюветів, бруду та заметів без шкоди для кузова.</div>
+      </div>
+      <div class="service-row">
+        <span class="dot">✦</span>
+        <div><strong>Заблоковані колеса та АКПП:</strong> комплект підкатних візків дозволяє завантажити машину з заблокованим кермом чи колесами.</div>
+      </div>
+      <div class="service-row">
+        <span class="dot">✦</span>
+        <div><strong>Міжміське доставлення та логістика:</strong> перевезення щойно куплених авто з митниць, портів або салонів по всій країні.</div>
+      </div>
+    </div>
+
+    <div class="section-title">Географія виїздів</div>
+    <div class="section-subtitle">Миттєво виїжджаємо в усі райони Хмельницького та на ключові траси:</div>
+    <div class="geo-tags">
+      <div class="geo-tag"><span>📍</span> Центр</div>
+      <div class="geo-tag"><span>📍</span> Заріччя</div>
+      <div class="geo-tag"><span>📍</span> Виставка</div>
+      <div class="geo-tag"><span>📍</span> Південно-Західний</div>
+      <div class="geo-tag"><span>📍</span> Озерна</div>
+      <div class="geo-tag"><span>📍</span> Дубове</div>
+      <div class="geo-tag"><span>📍</span> Гречани</div>
+      <div class="geo-tag"><span>📍</span> Траса М-30</div>
+      <div class="geo-tag"><span>📍</span> Траса Н-03</div>
+      <div class="geo-tag"><span>📍</span> Вся Україна</div>
+    </div>
+
+    <div class="section-title">Як замовити</div>
+    <div class="steps">
+      <div class="step-box">
+        <div class="step-num">01</div>
+        <div class="step-head">Зв'яжіться з нами</div>
+        <div class="step-text">Зателефонуйте за номером або напишіть у Viber / Telegram у будь-який час.</div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">02</div>
+        <div class="step-head">Уточніть деталі</div>
+        <div class="step-text">Повідомте марку авто, стан коліс та точну локацію.</div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">03</div>
+        <div class="step-head">Швидка подача</div>
+        <div class="step-text">Евакуатор негайно виїжджає на вашу локацію найкоротшим маршрутом.</div>
+      </div>
+    </div>
+
+    <div class="section-title">Часті запитання (FAQ)</div>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-q"><span>❓</span> Які документи потрібні для евакуації?</div>
+        <div class="faq-a">Техпаспорт або документ у додатку «Дія», що підтверджує право керування чи володіння автомобілем.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>❓</span> Чи можна їхати в кабіні?</div>
+        <div class="faq-a">Так, у кабіні є комфортні пасажирські місця для водія та супроводжуючих.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>❓</span> Що робити, якщо заблоковане кермо або коробка?</div>
+        <div class="faq-a">Ми використовуємо спеціальні підкатні візки, що дозволяє безпечно вантажити авто в будь-якому стані.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sticky-bar">
+    <a href="tel:+380989017932" class="btn-main">📞 Зателефонувати: +38 (098) 901-79-32</a>
+  </div>
+
+</body>
+</html>
